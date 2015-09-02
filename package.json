@@ -1,0 +1,25 @@
+{
+  "name": "modelite.js",
+  "version": "0.3.0",
+  "description": "Lightweight two-way databinding.",
+  "main": "modelite.min.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kankungyip/modelite.js.git"
+  },
+  "devDependencies": {
+    "uglify-js": "~2.4.0"
+  },
+  "keywords": [
+    "databinding",
+    "form",
+    "input",
+    "events"
+  ],
+  "author": "Kan Kung-Yip <gon@gyeq.in>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kankungyip/modelite.js/issues"
+  },
+  "homepage": "https://github.com/kankungyip/modelite.js"
+}

@@ -1,0 +1,49 @@
+<script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="modelite.min.js"></script>
+
+<p>
+  Input your name: <input type="text" name="name" ml-events="(change)inputChange">
+</p>
+
+<p>
+  Your name is: <span name="name"></span>
+</p>
+
+<textarea id="message" rows="9"></textarea>
+
+<ul name="list" ml-events="(repeat)listRepeat:Bazinga">
+  <li name="#" ml-events="(each)listEach">
+    <b ml-repeat="header">start</b>
+    <span name="$" ml-default="item"></span>
+    <i ml-repeat="footer">end</i>
+  </li>
+</ul>
+
+<button ml-insert="list" ml-events="(insert)added">Add</button>
+<button ml-remove="list.0" ml-events="(remove)removed">Remove</button>
+
+<script type="text/javascript">
+  function show(message) {
+    $("#message").prepend(message + "\n");
+  }
+  ml.DATA = {
+    list: ["zero", "one", "two", "three"]
+  };
+  ml.EVENTS = {
+    inputChange: function(event) {
+      show("text changed: " + this.val());
+    },
+    listRepeat: function(event, length) {
+      show("repeat finished: " + length + ", event.data: " + event.data);
+    },
+    listEach: function(event, index) {
+      show("item index: " + index);
+    },
+    added: function(event, keypath) {
+      show("added: " + keypath);
+    },
+    removed: function(event, keypath) {
+      show("removed: " + keypath);
+    }
+  };
+</script>
