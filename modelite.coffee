@@ -245,7 +245,7 @@ do ->
     # 根据 element 标签类型绑定数据
 
     switch do singleIt[0].tagName.toLowerCase
-      when "input"
+      when "input", "textarea"
         type = (singleIt.attr "type") or "text"
         switch do type.toLowerCase
           when "text", "email"
