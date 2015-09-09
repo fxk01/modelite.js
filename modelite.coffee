@@ -493,6 +493,16 @@ do ->
 
 
   ###
+    多语言配置
+  ###
+
+  ml.localizeString = (id, text) ->
+    I18N = ml "_I18N"
+    text = I18N[id] if typeof I18N[id] is "string"
+    text or id
+
+
+  ###
     自动初始化
   ###
 
